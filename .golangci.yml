@@ -1,0 +1,160 @@
+run:
+    timeout: 3m
+    tests: true
+    
+linters:
+    enable:
+        # Finds unchecked errors
+        - errcheck
+        
+        # Detects unused variable assignments
+        - ineffassign
+        
+        # Performs static code analysis
+        - staticcheck
+        
+        # Finds unused code and declarations
+        - unused
+        
+        # Checks if HTTP response body is closed
+        - bodyclose
+        
+        # Detects structs with context.Context fields
+        - containedctx
+        
+        # Checks for improperly inherited new contexts
+        - contextcheck
+        
+        # Detects copied loop variables
+        - copyloopvar
+        
+        # Identifies duplicated code blocks
+        - dupl
+        
+        # Checks for invalid duration multiplication
+        - durationcheck
+        
+        # Ensures proper error wrapping
+        - err113
+        
+        # Ensures correct error naming conventions
+        - errname
+        
+        # Analyzes error types for correctness
+        - errorlint
+        
+        # Detects unnecessary type assertions
+        - forcetypeassert
+        
+        # Checks if functions are too long
+        - funlen
+        
+        # Validates import order and grouping
+        - gci
+        
+        # Finds forbidden init functions
+        - gochecknoinits
+        
+        # Detects constant-like expressions
+        - goconst
+        
+        # Ensures proper sentence punctuation
+        - godot
+        
+        # Formats imports according to standards
+        - goimports
+        
+        # Validates printf-like function names
+        - goprintffuncname
+        
+        # Checks for security issues in code
+        - gosec
+        
+        # Checks for unused named parameters
+        - inamedparam
+        
+        # Validates integer range loops
+        - intrange
+        
+        # Ensures proper usage of interface returns
+        - ireturn
+        
+        # Limits line length to improve readability
+        - lll
+        
+        # Checks for proper logger usage
+        - loggercheck
+        
+        # Finds common spelling mistakes
+        - misspell
+        
+        # Detects magic numbers in code
+        - mnd
+        
+        # Checks for nested if statements
+        - nestif
+        
+        # Finds assignments of nil errors
+        - nilerr
+        
+        # Finds redundant nil checks
+        - nilnil
+        
+        # Checks for newline after return statements
+        - nlreturn
+        
+        # Ensures context is used in functions
+        - noctx
+        
+        # Finds inefficient usage of Sprintf
+        - perfsprint
+        
+        # Suggests memory preallocation
+        - prealloc
+        
+        # Detects unnecessary reassignments
+        - reassign
+        
+        # Ensures correct SQL row scanning
+        - rowserrcheck
+        
+        # Validates slog usage
+        - sloglint
+        
+        # Checks for unclosed SQL rows
+        - sqlclosecheck
+        
+        # Checks for code style issues
+        - stylecheck
+        
+        # Ensures environment variables are tested
+        - tenv
+        
+        # Checks for tests in main packages
+        - testpackage
+        
+        # Finds unnecessary type conversions
+        - unconvert
+        
+        # Detects unused parameters in functions
+        - unparam
+        
+        # Enforces use of standard library variables
+        - usestdlibvars
+        
+        # Finds unused assignments
+        - wastedassign
+        
+        # Checks for incorrect whitespace usage
+        - whitespace
+        
+        # Ensures error wrapping is used
+        - wrapcheck
+        
+        # Checks for incorrect whitespace wrapping
+        - wsl
+    
+linters-settings: 
+    errcheck:
+        check-type-assertions: true
+        check-blank: true
