@@ -49,9 +49,6 @@ linters:
         # Checks if functions are too long
         - funlen
         
-        # Validates import order and grouping
-        - gci
-        
         # Finds forbidden init functions
         - gochecknoinits
         
@@ -150,9 +147,6 @@ linters:
         
         # Ensures error wrapping is used
         - wrapcheck
-        
-        # Checks for incorrect whitespace wrapping
-        - wsl
     
 linters-settings: 
     errcheck:
