@@ -1,6 +1,9 @@
 package ai21
 
-import "net/http"
+import (
+    "fmt"
+    "net/http"
+)
 
 type ClientConfigs struct {
 	// Default: "https://api.ai21.com/studio/v1/"
@@ -31,6 +34,7 @@ func NewClientWithConfigs(apiKey string, cfg *ClientConfigs) *Client {
 		transport: cfg.HTTPClient.Transport,
 		token:     apiKey,
 	}
+
 	return &Client{
 		baseURL:    cfg.BaseURL,
 		httpClient: client,
@@ -48,5 +52,11 @@ func (t *authTransport) RoundTrip(req *http.Request) (*http.Response, error) {
 	if t.transport == nil {
 		t.transport = http.DefaultTransport
 	}
-	return t.transport.RoundTrip(req)
+
+	resp, err := t.transport.RoundTrip(req)
+	if err != nil {
+		return nil, fmt.Errorf("t.transport.RoundTrip(request): %w", err)
+	}
+
+	return resp, nil
 }

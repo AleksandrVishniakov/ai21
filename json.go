@@ -12,6 +12,7 @@ func encodeJSONToReader[T any](obj T) (io.Reader, error) {
 	if err != nil {
 		return nil, fmt.Errorf("json.Marshal(%+v): %w", obj, err)
 	}
+
 	return bytes.NewBuffer(buf), nil
 }
 

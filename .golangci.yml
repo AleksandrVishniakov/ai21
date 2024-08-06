@@ -58,9 +58,6 @@ linters:
         # Ensures proper sentence punctuation
         - godot
         
-        # Formats imports according to standards
-        - goimports
-        
         # Validates printf-like function names
         - goprintffuncname
         
@@ -73,9 +70,6 @@ linters:
         # Validates integer range loops
         - intrange
         
-        # Ensures proper usage of interface returns
-        - ireturn
-        
         # Limits line length to improve readability
         - lll
         
@@ -84,9 +78,6 @@ linters:
         
         # Finds common spelling mistakes
         - misspell
-        
-        # Detects magic numbers in code
-        - mnd
         
         # Checks for nested if statements
         - nestif

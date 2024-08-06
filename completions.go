@@ -2,7 +2,8 @@ package ai21
 
 import (
 	"context"
-	"fmt"
+    "errors"
+    "fmt"
 	"io"
 	"net/http"
 	"net/url"
@@ -10,6 +11,10 @@ import (
 
 const (
 	completionURL = "/chat/completions"
+)
+
+var (
+	ErrNoResponse = errors.New("no content response received: choices are empty")
 )
 
 type CompletionMessage struct {
@@ -178,7 +183,7 @@ func (c *Conversation) CompletionRequest(
 	}
 
 	if len(response.Choices) == 0 {
-		return nil, fmt.Errorf("no response received: len(response.Choices) == 0")
+		return nil, ErrNoResponse
 	}
 
 	c.history = append(
@@ -186,7 +191,7 @@ func (c *Conversation) CompletionRequest(
 		&CompletionMessage{RoleUser, prompt},
 		&response.Choices[0].Message,
 	)
-	
+
 	c.totalTokens += response.Usage.TotalTokens
 
 	return response, nil
